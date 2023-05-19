@@ -9,11 +9,11 @@ size_t x = 0, z = 0;
 	if (array == NULL)
 		return;
 
-	for (z = 0; z < size - 1; z++, cont = 0)
+	for (z = size; z > 0; z--, cont = 0)
 	{
 	tmp = array[z];
-	for (x = z; x < size; x++)
-		if (array[x] < array[z])
+	for (x = z; x > 0; x--)
+		if (array[x] > array[z])
 		{
 			p = &array[x];
 			array[z] = array[x];
