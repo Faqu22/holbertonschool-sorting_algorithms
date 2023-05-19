@@ -10,6 +10,9 @@ void selection_sort(int *array, size_t size)
 
 	int tmp = 0, *p = 0, cont = 0;
 
+	if (array == NULL)
+		return;
+
 	for (z = 0; z < size - 1; z++, cont = 0)
 	{
 	tmp = array[z];
