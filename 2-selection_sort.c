@@ -20,8 +20,10 @@ void selection_sort(int *array, size_t size)
 			array[z] = array[x];
 			cont++;
 		}
-	*p = tmp;
 	if (cont != 0)
+	{
+		*p = tmp;
 		print_array(array, size);
+	}
 	}
 }
