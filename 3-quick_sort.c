@@ -8,7 +8,7 @@ void swap(int *i, int *j)
     *j = tmp;
 }
 
-int partition(int *array, int l, int r)
+int partition(int *array, int l, int r, size_t size)
 {
     int pivot = array[r];
     int i = l, j = l;
@@ -20,24 +20,23 @@ int partition(int *array, int l, int r)
         }
     }
     swap(&array[i], &array[r]);
-	print_array(array, sizeof(array));
+	print_array(array, size);
     return (i);
 }
 
-void quick_sort_Rec(int *array, int low, int high)
+void quick_sort_Rec(int *array, int low, int high, size_t size)
 {
 	int i = 0;
 
 	if (low < high)
 	{
-		i = partition(array, low, high);
-		quick_sort_Rec(array, low, i - 1);
-		quick_sort_Rec(array, i + 1, high);
+		i = partition(array, low, high, size);
+		quick_sort_Rec(array, low, i - 1, size);
+		quick_sort_Rec(array, i + 1, high, size);
 	}
 }
 
 void quick_sort(int *array, size_t size)
 {
-	quick_sort_Rec(array, 0, size);
+	quick_sort_Rec(array, 0, size - 1, size);
 }
-
