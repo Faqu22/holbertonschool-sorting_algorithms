@@ -5,7 +5,7 @@ void swap(int *i, int *j, size_t size, int *array)
 {
     int tmp = 0;
 	
-	if (i != j)
+	if (*i != *j)
 	{
 		tmp = *i;
     	*i = *j;
